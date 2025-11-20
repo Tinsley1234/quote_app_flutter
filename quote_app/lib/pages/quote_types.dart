@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quote_app/main.dart';
 import 'package:quote_app/pages/acting_page.dart';
+import 'package:quote_app/pages/art_page.dart';
+import 'package:quote_app/pages/business_page.dart';
+import 'package:quote_app/pages/music_page.dart';
+import 'package:quote_app/pages/poetry_page.dart';
+import 'package:quote_app/pages/politics_page.dart';
 import 'package:quote_app/pages/quotes.dart';
 import 'package:quote_app/widgets/tiles.dart';
 
@@ -51,17 +56,17 @@ class QuoteTypes extends StatelessWidget {
                     )
                   ],),
 
-                  TextField(
-                style: TextStyle(color: Colors.white),
-                cursorColor: Colors.grey, cursorRadius: Radius.circular(10),
-                autocorrect: true,
+              //     TextField(
+              //   style: TextStyle(color: Colors.white),
+              //   cursorColor: Colors.grey, cursorRadius: Radius.circular(10),
+              //   autocorrect: true,
                 
-                decoration: InputDecoration(
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-                  suffixIcon: Transform.rotate( angle: 95.8,
-                    child: Icon(Icons.search, color: Colors.grey,))
-                ),
-              ),
+              //   decoration: InputDecoration(
+              //     focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+              //     suffixIcon: Transform.rotate( angle: 95.8,
+              //       child: Icon(Icons.search, color: Colors.grey,))
+              //   ),
+              // ),
                 ],
               ),
               ),
@@ -72,15 +77,15 @@ class QuoteTypes extends StatelessWidget {
                   padding: EdgeInsets.all(0),
                   children: [
                     Tiles(tilename: "Acting",funTask: (){Navigator.push(context,SwipePageRoute(page: ActingPage(), xPositon: 1.0, yPositon: 0));},),
-                    Tiles(tilename: "Art", funTask: () {  },),
-                    Tiles(tilename: "Business", funTask: () {  },),
-                    Tiles(tilename: "Music", funTask: () {  },),
-                    Tiles(tilename: "Poetry", funTask: () {  },),
-                    Tiles(tilename: "Politics", funTask: () {  },),
-                    Tiles(tilename: "Religion", funTask: () {  },),
-                    Tiles(tilename: "Life", funTask: () {  },),
-                    Tiles(tilename: "Technology", funTask: () {  },),
-                    Tiles(tilename: "Inspirational", funTask: () {  },),
+                    Tiles(tilename: "Art", funTask: () { Navigator.push(context, SwipePageRoute(page: ArtPage(), xPositon: 1.0, yPositon: 0)); },),
+                    Tiles(tilename: "Business", funTask: () { Navigator.push(context, SwipePageRoute(page: BusinessPage(), xPositon: 1.0, yPositon: 0)); },),
+                    Tiles(tilename: "Music", funTask: () {  Navigator.push(context, SwipePageRoute(page: MusicPage(), xPositon: 1.0, yPositon: 0)); },),
+                    Tiles(tilename: "Poetry", funTask: () {Navigator.push(context, SwipePageRoute(page: PoetryPage(), xPositon: 1.0, yPositon: 0)); },),
+                    Tiles(tilename: "Politics", funTask: () {Navigator.push(context, SwipePageRoute(page: PoliticsPage(), xPositon: 1.0, yPositon: 0)); },),
+                    // Tiles(tilename: "Religion", funTask: () {  },),
+                    // Tiles(tilename: "Life", funTask: () {  },),
+                    // Tiles(tilename: "Technology", funTask: () {  },),
+                    // Tiles(tilename: "Inspirational", funTask: () {  },),
                   ],
                 ),
               )

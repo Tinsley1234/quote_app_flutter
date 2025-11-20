@@ -7,14 +7,15 @@ import 'package:quote_app/Api/main_modelapi.dart';
 import 'package:quote_app/widgets/button.dart';
 import 'package:quote_app/widgets/header.dart';
 import 'package:quote_app/widgets/tiny_designs_arrangement.dart';
+// import 'package:quote_app/widgets/tiny_designs.dart';
 
-class Quotes extends StatefulWidget {
-  const Quotes({super.key});
+class ArtPage extends StatefulWidget {
+  const ArtPage({super.key});
 
   @override
-  State<Quotes> createState() => _QuotesState();
+  State<ArtPage> createState() => _ArtPageWidgetState();
 }
-class _QuotesState extends State<Quotes> {
+class _ArtPageWidgetState extends State<ArtPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _QuotesState extends State<Quotes> {
         child:Scaffold(
         backgroundColor: const Color.fromARGB(255, 6, 4, 4),
         // backgroundColor: Colors.amber,
-        body: Page()
+        body: Aapage()
       ),
     )
   );
@@ -36,16 +37,15 @@ class _QuotesState extends State<Quotes> {
 }
 
 
-class Page extends StatefulWidget {
-  const Page({super.key});
+class Aapage extends StatefulWidget {
+  const Aapage({super.key});
 
   @override
-  State<Page> createState() => _PageState();
+  State<Aapage> createState() => _AapageState();
 }
 
-class _PageState extends State<Page> {
-  
-  late Future<MainModelapi?> futureQuote;
+class _AapageState extends State<Aapage> {
+   late Future<MainModelapi?> futureQuote;
   @override
 void initState() {
   super.initState();
@@ -56,6 +56,7 @@ Future<void> _refreshQuotes() async {
     futureQuote = mainfetchQuote();  // THIS fetches a NEW quote
   });
 }
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -68,10 +69,10 @@ Future<void> _refreshQuotes() async {
         child: Stack(
           children: [
             TinyDesignsArrangement(),
-
+            
             Column(
               children: [
-                Header(title:"quote."),
+                Header(title:"art."),
                 
                 SizedBox(height: 130.h,),  
             

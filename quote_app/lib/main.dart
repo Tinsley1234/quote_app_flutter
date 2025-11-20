@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
         home: 
         // MyStepperApp(),
         Quotes(),
+        // ActingPage(),
         routes: {
             "/types": (context) => QuoteTypes(),
             "/main" : (context) =>Quotes(),

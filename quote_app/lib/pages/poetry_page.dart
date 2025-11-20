@@ -7,18 +7,19 @@ import 'package:quote_app/Api/main_modelapi.dart';
 import 'package:quote_app/widgets/button.dart';
 import 'package:quote_app/widgets/header.dart';
 import 'package:quote_app/widgets/tiny_designs_arrangement.dart';
+// import 'package:quote_app/widgets/tiny_designs.dart';
 
-class Quotes extends StatefulWidget {
-  const Quotes({super.key});
+class PoetryPage extends StatefulWidget {
+  const PoetryPage({super.key});
 
   @override
-  State<Quotes> createState() => _QuotesState();
+  State<PoetryPage> createState() => _PoetryPageState();
 }
-class _QuotesState extends State<Quotes> {
 
+class _PoetryPageState extends State<PoetryPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: const SystemUiOverlayStyle(
@@ -28,7 +29,7 @@ class _QuotesState extends State<Quotes> {
         child:Scaffold(
         backgroundColor: const Color.fromARGB(255, 6, 4, 4),
         // backgroundColor: Colors.amber,
-        body: Page()
+        body: Ppage()
       ),
     )
   );
@@ -36,22 +37,22 @@ class _QuotesState extends State<Quotes> {
 }
 
 
-class Page extends StatefulWidget {
-  const Page({super.key});
+
+class Ppage extends StatefulWidget {
+  const Ppage({super.key});
 
   @override
-  State<Page> createState() => _PageState();
+  State<Ppage> createState() => _PpageState();
 }
 
-class _PageState extends State<Page> {
-  
-  late Future<MainModelapi?> futureQuote;
+class _PpageState extends State<Ppage> {
+   late Future<MainModelapi?> futureQuote;
   @override
 void initState() {
   super.initState();
   futureQuote = mainfetchQuote();}
 
-Future<void> _refreshQuotes() async {
+Future<void> _refreshMusicPage() async {
   setState(() {
     futureQuote = mainfetchQuote();  // THIS fetches a NEW quote
   });
@@ -62,16 +63,16 @@ Future<void> _refreshQuotes() async {
       elevation: 0,
       backgroundColor: Colors.transparent,
       color: Colors.white,
-      onRefresh: _refreshQuotes,
+      onRefresh: _refreshMusicPage,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
         child: Stack(
           children: [
             TinyDesignsArrangement(),
-
+            
             Column(
               children: [
-                Header(title:"quote."),
+                Header(title:"poetry."),
                 
                 SizedBox(height: 130.h,),  
             
@@ -158,7 +159,7 @@ Future<void> _refreshQuotes() async {
             
           ),
                   
-                Button(onpressedValue: _refreshQuotes,)
+                Button(onpressedValue: _refreshMusicPage,)
           ]
         ),]
       )),

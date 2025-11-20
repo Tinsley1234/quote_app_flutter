@@ -7,14 +7,15 @@ import 'package:quote_app/Api/main_modelapi.dart';
 import 'package:quote_app/widgets/button.dart';
 import 'package:quote_app/widgets/header.dart';
 import 'package:quote_app/widgets/tiny_designs_arrangement.dart';
+// import 'package:quote_app/widgets/tiny_designs.dart';
 
-class Quotes extends StatefulWidget {
-  const Quotes({super.key});
+class BusinessPage extends StatefulWidget {
+  const BusinessPage({super.key});
 
   @override
-  State<Quotes> createState() => _QuotesState();
+  State<BusinessPage> createState() => _BusinessPageState();
 }
-class _QuotesState extends State<Quotes> {
+class _BusinessPageState extends State<BusinessPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _QuotesState extends State<Quotes> {
         child:Scaffold(
         backgroundColor: const Color.fromARGB(255, 6, 4, 4),
         // backgroundColor: Colors.amber,
-        body: Page()
+        body: Bpage()
       ),
     )
   );
@@ -36,14 +37,14 @@ class _QuotesState extends State<Quotes> {
 }
 
 
-class Page extends StatefulWidget {
-  const Page({super.key});
+class Bpage extends StatefulWidget {
+  const Bpage({super.key});
 
   @override
-  State<Page> createState() => _PageState();
+  State<Bpage> createState() => _PageState();
 }
 
-class _PageState extends State<Page> {
+class _PageState extends State<Bpage> {
   
   late Future<MainModelapi?> futureQuote;
   @override
@@ -51,7 +52,7 @@ void initState() {
   super.initState();
   futureQuote = mainfetchQuote();}
 
-Future<void> _refreshQuotes() async {
+Future<void> _refreshBusinessPage() async {
   setState(() {
     futureQuote = mainfetchQuote();  // THIS fetches a NEW quote
   });
@@ -62,16 +63,16 @@ Future<void> _refreshQuotes() async {
       elevation: 0,
       backgroundColor: Colors.transparent,
       color: Colors.white,
-      onRefresh: _refreshQuotes,
+      onRefresh: _refreshBusinessPage,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
         child: Stack(
           children: [
             TinyDesignsArrangement(),
-
+            
             Column(
               children: [
-                Header(title:"quote."),
+                Header(title:"business."),
                 
                 SizedBox(height: 130.h,),  
             
@@ -158,7 +159,7 @@ Future<void> _refreshQuotes() async {
             
           ),
                   
-                Button(onpressedValue: _refreshQuotes,)
+                Button(onpressedValue: _refreshBusinessPage,)
           ]
         ),]
       )),

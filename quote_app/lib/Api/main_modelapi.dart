@@ -1,5 +1,6 @@
-class QuoteApi {
-    QuoteApi({
+//Model for first page
+class MainModelapi {
+    MainModelapi({
         required this.quote,
         required this.author,
     });
@@ -7,18 +8,18 @@ class QuoteApi {
     final String? quote;
     final String? author;
 
-    QuoteApi copyWith({
+    MainModelapi copyWith({
         String? quote,
         String? author,
     }) {
-        return QuoteApi(
+        return MainModelapi(
             quote: quote ?? this.quote,
             author: author ?? this.author,
         );
     }
 
-    factory QuoteApi.fromJson(Map<String, dynamic> json){ 
-        return QuoteApi(
+    factory MainModelapi.fromJson(Map<String, dynamic> json){ 
+        return MainModelapi(
             quote: json["quote"],
             author: json["author"],
         );
@@ -34,3 +35,34 @@ class QuoteApi {
         return "$quote, $author, ";
     }
 }
+
+
+//Model for acting page
+
+
+//Model for art page
+
+
+//Model for business page
+
+
+//Model for music page
+
+
+//Model for poetry page
+
+
+//Model for Politics page
+
+
+//Model for Religion page
+
+
+//Model for life page
+
+
+//Model for Technology page
+
+
+//Model for Inspirational page
+
